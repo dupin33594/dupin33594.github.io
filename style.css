@@ -9,7 +9,7 @@ body {
 
 /* navigation menu */
 nav {
-    background: rgb(54, 80, 210);
+    background: #3650d2;
     margin: 0 auto;
     display: flex;
     padding: 10px;
@@ -42,7 +42,7 @@ a {
 
 /* main container area beneath menu */
 main {
-    background: rgb(37, 93, 158);
+    background: #3650d2;
     display: flex;
     margin-top: 20px;
 }
