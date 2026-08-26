@@ -707,7 +707,7 @@ function createPlatform(
   y,
   width,
   height,
-  color = "grey",
+  color = "light purple",
   minX = null,
   maxX = null,
   speedX = 1,
@@ -732,7 +732,7 @@ function createPlatform(
   });
 }
 
-function createFakePlatform(x, y, width, height, color = "grey") {
+function createFakePlatform(x, y, width, height, color = "light purple") {
   fakePlatforms.push({
     x,
     y,

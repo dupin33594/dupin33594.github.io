@@ -1,6 +1,6 @@
 body {
   margin: 0px;
-  background-color: #202737;
+  background-color: #000000;
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -8,10 +8,8 @@ body {
 }
 
 canvas {
-  background-color: lightblue;
-  margin: 20px;
-  border-radius: 15px;
-  border: 5px solid rgba(118, 0, 233, 0.375);
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTW3ooRoDfwMn6SGMPFNxy1FlW5zb6OwKk-8G9l0kIFk9HlpbP0gbnkhMX4:https://static.vecteezy.com/system/resources/previews/024/592/845/non_2x/cartoon-spaceship-lab-interior-design-free-vector.jpg&s=10);
+  background-size: cover
 }
 
 img {
