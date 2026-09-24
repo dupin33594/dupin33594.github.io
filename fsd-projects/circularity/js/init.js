@@ -27,12 +27,20 @@ var circles = [];
 
         // TODO 2 : Create a function that draws a circle 
        function drawCircle(){
+        
             var circle = draw.randomCircleInArea(canvas, true, true, "#999", 2);
             physikz.addRandomVelocity(circle, canvas, 5, 5);
             view.addChild(circle);
             circles.push(circle);
-       }
-
+       } 
+Gamification.init({
+            canvas: canvas,
+            view: view, 
+            draw: draw,
+            physikz: physikz,
+            circles: circles,
+            game: game
+       });
         // TODO 3 : Call the drawCircle() function
        drawCircle();
        drawCircle();
@@ -59,6 +67,7 @@ var circles = [];
         */
         function update() {
             // TODO 4 : Update the position of each circle using physikz.updatePosition()
+            Gamification.update();
             physikz.updatePosition(circles[0]);
             physikz.updatePosition(circles[1]);
             physikz.updatePosition(circles[2]);
