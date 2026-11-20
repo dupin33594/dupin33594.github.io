@@ -10,9 +10,21 @@ function runProgram(){
   // Constant Variables
   var FRAME_RATE = 60;
   var FRAMES_PER_SECOND_INTERVAL = 1000 / FRAME_RATE;
+  const KEY = {
+    ENTER : 13,
+    LEFT : 37,
+    UP : 38,
+    RIGHT : 39,
+    DOWN : 40,
+  };
   
   // Game Item Objects
-
+  var walker = {
+    x: 0,
+    y: 0,
+    speedX:0,
+    speedY: 0,
+  }
 
   // one-time setup
   var interval = setInterval(newFrame, FRAMES_PER_SECOND_INTERVAL);   // execute newFrame every 0.0166 seconds (60 Frames per second)
@@ -23,7 +35,8 @@ function runProgram(){
 
   Note: You can have multiple event listeners for different types of events.
   */
-  $(document).on('eventType', handleEvent);                          
+  $(document).on('keydown', handleKeyDown); 
+  $(document).on('Keyup', handlekeyup);
 
   ////////////////////////////////////////////////////////////////////////////////
   ///////////////////////// CORE LOGIC ///////////////////////////////////////////
@@ -34,7 +47,7 @@ function runProgram(){
   by calling this function and executing the code inside.
   */
   function newFrame() {
-    
+    repositionGameItem();
 
   }
   
@@ -44,15 +57,37 @@ function runProgram(){
   
   Note: You can have multiple event handlers for different types of events.
   */
-  function handleEvent(event) {
 
+  function handleKeyDown(event) {
+    if (event.which === KEY.LEFT) {
+      walker.speedX = -5;
+    } else if (event.which === KEY.RIGHT) {
+      walker.speedX = 5;
+    } else if (event.which === KEY.UP) {
+      walker.speedY = -5;
+    } else if (event.which === KEY.DOWN) {
+      walker.speedY = 5;
+    } else if (event.which === KEY.ENTER) {
+      console.log("enter pressed");
+    }
   }
+ 
 
   ////////////////////////////////////////////////////////////////////////////////
   ////////////////////////// HELPER FUNCTIONS ////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
 
+  function repositionGameItem(){
+    walker.x += walker.speedX;
+    walker.y += walker.speedY;
+    //console.log(walker.x, walker.y);
+  }
   
+  function redrawGameItem(){
+    8
+  }
+
+
   function endGame() {
     // stop the interval timer
     clearInterval(interval);
